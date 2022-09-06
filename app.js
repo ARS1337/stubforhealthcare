@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/customerapi/login_api", (req, res) => {
-    console.log(req.body)
+  console.log(req.body);
   if (req.body.email == "mypcot@gmail.in" && req.body.password == "12345678" && req.body.country_id == "1") {
     res.json(Sample.loginSuccess);
   } else {
@@ -28,15 +28,24 @@ app.post("/customerapi/banner/listing", (req, res) => {
 });
 
 app.post("/customerapi/forgot_password_api", (req, res) => {
-    console.log(req.body)
-    if (req.body.country_id != 1) {
-      res.json(Sample.forgotPasswordFail);
-    } else {
-      res.json(Sample.forgotPasswordSuccess);
-    }
-  });
+  console.log(req.body);
+  if (req.body.country_id != 1) {
+    res.json(Sample.forgotPasswordFail);
+  } else {
+    res.json(Sample.forgotPasswordSuccess);
+  }
+});
 
+app.post("/customerapi/my_profile/change_password_api", (req, res) => {
+  console.log(req.body);
+  let current_password = Sample.users.user.password
+  if (req.body.current_password != current_password && req.body.new_password!==confirm_password ) {
+    res.json(Sample.forgotPasswordFail);
+  } else {
+    res.json(Sample.forgotPasswordSuccess);
+  }
+});
 
 app.listen(process.env.PORT, () => {
-  console.log("sdfsdsdsdfsd and port is ",process.env.PORT);
+  console.log("sdfsdsdsdfsd and port is ", process.env.PORT);
 });

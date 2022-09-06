@@ -1,4 +1,7 @@
 const Sample = {
+  users:[
+    {user:'mypcot@gmail.in',password:'12345678'}
+  ],
   loginSuccess: {
     success: "1",
     message: "Logged in successfully!",
@@ -84,6 +87,17 @@ const Sample = {
   forgotPasswordFail: {
     success: "0",
     message: "Invalid  params",
+  },
+  forgotPasswordSuccess: {
+    success: "1",
+    message: "We have redirected you to reset password page.",
+    data: {
+      reset_password_link: "http://clear-moments-float-106-201-76-55.loca.lt/webadmin/forgot-password?c=1",
+    },
+  },
+  changePasswordFail:{
+    success: "0",
+    message: "Invalid credentials",
   },
   forgotPasswordSuccess: {
     success: "1",
