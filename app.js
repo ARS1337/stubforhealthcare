@@ -2,7 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+// in latest body-parser use like below.
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 const Sample = require("./sample");
 
