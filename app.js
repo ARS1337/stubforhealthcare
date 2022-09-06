@@ -37,6 +37,6 @@ app.post("/customerapi/forgot_password_api", (req, res) => {
   });
 
 
-app.listen(3001, () => {
-  console.log("sdfsdsdsdfsd");
+app.listen(process.env.PORT, () => {
+  console.log("sdfsdsdsdfsd and port is ",process.env.PORT);
 });
