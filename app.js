@@ -1,11 +1,8 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-// in latest body-parser use like below.
-app.use(bodyParser.urlencoded({ extended: true }));
+const formidable = require('express-formidable');
+app.use(formidable());
 app.use(cors());
 const Sample = require("./sample");
 
@@ -14,8 +11,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/customerapi/login_api", (req, res) => {
-  console.log(req.body);
-  if (req.body.email == "mypcot@gmail.in" && req.body.password == "12345678" && req.body.country_id == "1") {
+  console.log(req.fields);
+  if (req.fields.email == "mypcot@gmail.in" && req.fields.password == "12345678" && req.fields.country_id == "1") {
     res.json(Sample.loginSuccess);
   } else {
     res.json(Sample.loginFailed);
@@ -23,7 +20,7 @@ app.post("/customerapi/login_api", (req, res) => {
 });
 
 app.post("/customerapi/banner/listing", (req, res) => {
-  if (req.body.country_id != 1) {
+  if (req.fields.country_id != 1) {
     res.json(Sample.bannerFail);
   } else {
     res.json(Sample.bannerSuccess);
@@ -31,8 +28,8 @@ app.post("/customerapi/banner/listing", (req, res) => {
 });
 
 app.post("/customerapi/forgot_password_api", (req, res) => {
-  console.log(req.body);
-  if (req.body.country_id != 1) {
+  console.log(req.fields);
+  if (req.fields.country_id != 1) {
     res.json(Sample.forgotPasswordFail);
   } else {
     res.json(Sample.forgotPasswordSuccess);
@@ -40,15 +37,15 @@ app.post("/customerapi/forgot_password_api", (req, res) => {
 });
 
 app.post("/customerapi/my_profile/change_password_api", (req, res) => {
-  console.log(req.body);
+  console.log(req.fields);
   let current_password = Sample.users.user.password
-  if (req.body.current_password != current_password && req.body.new_password!==confirm_password ) {
+  if (req.fields.current_password != current_password && req.fields.new_password!==confirm_password ) {
     res.json(Sample.forgotPasswordFail);
   } else {
     res.json(Sample.forgotPasswordSuccess);
   }
 });
 
-app.listen(process.env.PORT, () => {
-  console.log("sdfsdsdsdfsd and port is ", process.env.PORT);
+app.listen(process.env.PORT || 3001, () => {
+  console.log("sdfsdsdsdfsd and port is ", process.env.PORT || 3001);
 });
