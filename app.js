@@ -42,7 +42,7 @@ app.post("/customerapi/my_profile/change_password_api", (req, res) => {
   if (req.fields.current_password != current_password && req.fields.new_password !== req.fields.confirm_password) {
     res.json(Sample.forgotPasswordFail);
   } else {
-    Sample.users.user.password = confirm_password;
+    Sample.users[0].password =  req.fields.confirm_password;
     res.json(Sample.forgotPasswordSuccess);
   }
 });
