@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const formidable = require('express-formidable');
+const formidable = require("express-formidable");
 app.use(formidable());
 app.use(cors());
 const Sample = require("./sample");
@@ -38,10 +38,11 @@ app.post("/customerapi/forgot_password_api", (req, res) => {
 
 app.post("/customerapi/my_profile/change_password_api", (req, res) => {
   console.log(req.fields);
-  let current_password = Sample.users.user.password
-  if (req.fields.current_password != current_password && req.fields.new_password!==confirm_password ) {
+  let current_password = Sample.users.user.password;
+  if (req.fields.current_password != current_password && req.fields.new_password !== req.fields.confirm_password) {
     res.json(Sample.forgotPasswordFail);
   } else {
+    Sample.users.user.password = confirm_password;
     res.json(Sample.forgotPasswordSuccess);
   }
 });
