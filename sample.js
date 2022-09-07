@@ -1,7 +1,5 @@
 const Sample = {
-  users:[
-    {user:'mypcot@gmail.in',password:'12345678'}
-  ],
+  users: [{ user: "mypcot@gmail.in", password: "12345678" }],
   loginSuccess: {
     success: "1",
     message: "Logged in successfully!",
@@ -43,8 +41,7 @@ const Sample = {
         {
           id: 1,
           title: "Banner",
-          banner_image:
-            "https://placehold.jp/1200x800.png",
+          banner_image: "https://placehold.jp/1200x800.png",
           banner_thumb_image:
             "http://skyonliners.com/demo/yaduz/storage/app/public/uploads/banner/thumb/banner_thumb_1.jpg?d=1662459423",
           seo_url: "banner",
@@ -55,8 +52,7 @@ const Sample = {
         {
           id: 2,
           title: "Banner 2",
-          banner_image:
-            "https://placehold.jp/1200x800.png",
+          banner_image: "https://placehold.jp/1200x800.png",
           banner_thumb_image:
             "http://skyonliners.com/demo/yaduz/storage/app/public/uploads/banner/thumb/banner_thumb_1.jpg?d=1662459423",
           seo_url: "banner-2",
@@ -67,8 +63,7 @@ const Sample = {
         {
           id: 3,
           title: "Banner 3",
-          banner_image:
-            "https://placehold.jp/1200x800.png",
+          banner_image: "https://placehold.jp/1200x800.png",
           banner_thumb_image:
             "http://skyonliners.com/demo/yaduz/storage/app/public/uploads/banner/thumb/banner_thumb_1.jpg?d=1662459423",
           seo_url: "banner-3",
@@ -92,10 +87,11 @@ const Sample = {
     success: "1",
     message: "We have redirected you to reset password page.",
     data: {
-      reset_password_link: "http://clear-moments-float-106-201-76-55.loca.lt/webadmin/forgot-password?c=1",
+      reset_password_link:
+        "http://clear-moments-float-106-201-76-55.loca.lt/webadmin/forgot-password?c=1",
     },
   },
-  changePasswordFail:{
+  changePasswordFail: {
     success: "0",
     message: "Invalid credentials",
   },
@@ -103,9 +99,120 @@ const Sample = {
     success: "1",
     message: "We have redirected you to reset password page.",
     data: {
-      reset_password_link: "http://clear-moments-float-106-201-76-55.loca.lt/webadmin/forgot-password?c=1",
+      reset_password_link:
+        "http://clear-moments-float-106-201-76-55.loca.lt/webadmin/forgot-password?c=1",
     },
   },
+  stateList: {
+    success: "1",
+    message: "Data Fetched Successfully",
+    data: {
+      result: [
+        {
+          id: 1,
+          state_name: "Andaman & Nicobar",
+          country_name: "India",
+        },
+        {
+          id: 2,
+          state_name: "Arunachal Pradesh",
+          country_name: "India",
+        },
+        {
+          id: 3,
+          state_name: "Assam",
+          country_name: "India",
+        },
+        {
+          id: 4,
+          state_name: "Bihar",
+          country_name: "India",
+        },
+        {
+          id: 5,
+          state_name: "Chandigarh",
+          country_name: "India",
+        },
+        {
+          id: 6,
+          state_name: "Chhattisgarh",
+          country_name: "India",
+        },
+        {
+          id: 7,
+          state_name: "Dadra & Nagar Haveli",
+          country_name: "India",
+        },
+        {
+          id: 8,
+          state_name: "Daman & Diu",
+          country_name: "India",
+        },
+        {
+          id: 9,
+          state_name: "Delhi",
+          country_name: "India",
+        },
+        {
+          id: 10,
+          state_name: "Goa",
+          country_name: "India",
+        },
+      ],
+      total_records: 10,
+    },
+  },
+  countryList: {
+    success: "1",
+    message: "Data Fetched Successfully",
+    data: {
+      result: [
+        {
+          id: 1,
+          country_name: "India",
+          phone_code: "91",
+          phone_length: "10",
+          currency_name: "Indian Rupee",
+          currency_symbol: "₹",
+          currency_code: "INR",
+        },
+        {
+          id: 2,
+          country_name: "Russia",
+          phone_code: "81",
+          phone_length: "10",
+          currency_name: "Russian Rouble",
+          currency_symbol: "₽",
+          currency_code: "RUB",
+        },
+      ],
+      total_records: 1,
+    },
+  },
+  roles:{
+    success: "1",
+    message: "Data Fetched Successfully",
+    data: {
+      result:[
+        {
+          id: 1,
+          role_name: "Admin",
+        },
+        {
+          id: 2,
+          role_name: "Accountant",
+        },
+        {
+          id: 3,
+          role_name: "Manager",
+        },
+        {
+          id: 4,
+          role_name: "Dispatcher",
+        },
+      ]
+    }
+  }
 };
 
 module.exports = Sample;
