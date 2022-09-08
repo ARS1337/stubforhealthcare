@@ -7,7 +7,7 @@ app.use(cors());
 const Sample = require("./sample");
 
 app.get("/", (req, res) => {
-  res.send("/ get request ");
+  res.send("<p> pee pee poo poo </p>");
 });
 
 app.post("/customerapi/login_api", (req, res) => {
@@ -66,6 +66,6 @@ app.post("/customerapi/country/listing", (req, res) => {
   res.json(Sample.countryList);
 });
 
-app.listen(process.env.PORT || 3001, () => {
-  console.log("sdfsdsdsdfsd and port is ", process.env.PORT || 3001);
+app.listen(process.env.PORT || 8080, () => {
+  console.log("sdfsdsdsdfsd and port is ", process.env.PORT || 8080);
 });
